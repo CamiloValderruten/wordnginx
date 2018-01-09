@@ -5,7 +5,12 @@ services:
     restart: always
     container_name: wordpress
     build: wordpress
-    env_file:
-        - configuration/settings.env
+    ports:
+        - 8000:80
+    environment:
+        WORDPRESS_DB_NAME: emotions
+        WORDPRESS_DB_HOST: emotions.cvd4cpmr8bxw.us-east-1.rds.amazonaws.com
+        WORDPRESS_DB_USER: emotions
+        WORDPRESS_DB_PASSWORD: K8yIDPI94zDcvQFJQtM5JS
     volumes:
         - ./wordpress/data:/var/www/html
