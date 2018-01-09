@@ -1,3 +1,4 @@
 *.pem
 *.xml
 .idea*
+*/data

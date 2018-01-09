@@ -1,19 +1,11 @@
 version: '3'
 
 services:
-  nginx:
-    restart: always
-    container_name: nginx
-    build: nginx
-    ports:
-        - 80:80
-        - 443:443
-    env_file:
-        - configuration/settings.env
-
   wordpress:
     restart: always
     container_name: wordpress
     build: wordpress
     env_file:
         - configuration/settings.env
+    volumes:
+        - ./wordpress/data:/var/www/html
